@@ -15,10 +15,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "ContasCorrentes")
-@NamedQueries({
-    @NamedQuery(name = "ContaCorrente.findByCodigo", query = "select p from contacorrente p where p.codigo = :codigo")
-})
-@XmlRootElement(name="contascorrentes")
+@XmlRootElement()
 public class ContaCorrente extends Conta{
     
     @Column(length = 200, nullable = false)

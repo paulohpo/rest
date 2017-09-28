@@ -3,8 +3,6 @@ package com.genericrest.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -14,10 +12,8 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "agencias")
-@NamedQueries({
-    @NamedQuery(name = "Agencia.FindByNome", query = "select p from Agencia p where p.nome = :nome")
-})
-@XmlRootElement(name="agencias")
+
+@XmlRootElement()
 public class Agencia extends AbstractEntity {
     
     @Column(length = 200, nullable = false)
