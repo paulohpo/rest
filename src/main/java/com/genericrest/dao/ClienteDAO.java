@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author PauloHenrique
  */
-public interface ClienteDAO  extends DAO<Cliente, String>{
-    List<Cliente>findByCodigo(String codigo);
+public interface ClienteDAO  extends DAO<Cliente, Long>{
+    
 }
     

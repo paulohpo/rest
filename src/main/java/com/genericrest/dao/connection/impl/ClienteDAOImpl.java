@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
  * @author PauloHenrique
  */
 @ApplicationScoped
-public class ClienteDAOImpl extends GenericDAO<Cliente, String> implements ClienteDAO {
+public class ClienteDAOImpl extends GenericDAO<Cliente, Long> implements ClienteDAO {
 
     private static final Logger LOG = LoggerFactory.getLogger(ClienteDAOImpl.class);
 
@@ -34,19 +34,6 @@ public class ClienteDAOImpl extends GenericDAO<Cliente, String> implements Clien
         return LOG;
     }
 
-    @Override
-    public Cliente findByCodigo(String codigo) {
-        Query query = getEntityManager().createNamedQuery("Cliente.findByCodigo",Cliente.class);
-        query.setParameter("codigo", codigo);
-        List<Cliente> clientes = query.getResultList();
-        
-        if (clientes == null || clientes.isEmpty()) {
-           return null;
-        } else if (clientes.size() > 1) {
-            throw new  NonUniqueResultException();
-        } else {
-            return clientes.get(0);
-        }
-    }
+   
 }
  

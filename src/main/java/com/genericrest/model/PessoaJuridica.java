@@ -15,10 +15,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "PessoasJuridicas")
-@NamedQueries({
-    @NamedQuery(name = "Pessoajuridica.findByCnpj", query = "select p from pessoajuridica p where p.cnpj = :cnpj")
-})
-@XmlRootElement(name="pessoasjuridicas")
+
+@XmlRootElement()
 public class PessoaJuridica extends Cliente {
     
 @Column(length = 200, nullable = false)
