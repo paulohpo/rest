@@ -3,8 +3,10 @@ package com.genericrest.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
 /**
  *
@@ -15,9 +17,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "contas")
 
 @XmlRootElement()
-public class Conta extends Agencia {
+public class Conta {
     
     @Column(length = 200, nullable = false)
+    
+    @Id
     private String numero;
     
         public Conta() {
@@ -32,7 +36,7 @@ public class Conta extends Agencia {
         this.numero = numero;
     }
     
-    @Override
+    
     public void updateParameters(Object entity) {
       final Conta other = (Conta) entity;
        this.numero = other.numero;

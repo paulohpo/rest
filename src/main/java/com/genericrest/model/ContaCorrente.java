@@ -3,10 +3,9 @@ package com.genericrest.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
 /**
  *
@@ -19,9 +18,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ContaCorrente extends Conta{
     
     @Column(length = 200, nullable = false)
+    
     private String codigo;
    
     @Column(length = 200, nullable = false)
+    
     private String saldo;
 
     public ContaCorrente() {
@@ -29,12 +30,12 @@ public class ContaCorrente extends Conta{
     
     
 
-    @Override
+    
     public String getCodigo() {
         return codigo;
     }
 
-    @Override
+    
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }

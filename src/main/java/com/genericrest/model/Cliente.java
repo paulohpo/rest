@@ -27,8 +27,7 @@ public class Cliente extends AbstractEntity {
     public Cliente(String codigo) {
         this.codigo = codigo;
     }
-
-     
+    
     
     @Override
     public void updateParameters(Object entity) {

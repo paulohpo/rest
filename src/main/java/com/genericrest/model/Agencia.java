@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
 /**
  *
@@ -20,6 +21,7 @@ public class Agencia extends AbstractEntity {
     private String codigo;
     
     @Column(length = 200, nullable = false)
+  
     private String nome;
 
     public Agencia() {
